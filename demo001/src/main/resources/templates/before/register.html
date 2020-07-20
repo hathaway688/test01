@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>欢迎加入思特奇</title>
+		<link rel="shortcut icon" href="https://img3.doubanio.com/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" th:href="${#request.getContextPath()}+'/'+css+'/'+register.css"  />
+		<link rel="stylesheet" type="text/css" th:href="${#request.getContextPath()}+'/'+webjars+'/'+bootstrap+'/'+3.3.7+'/'+css+'/'+bootstrap.min.css"/>
+			</head>
+
+	<body>
+	<div class="container" style="margin-left:-30px">
+		<div class="header">
+			<a target="_self ">
+				<img
+				th:src="${#request.getContextPath()}+'/'+pic+'/'+si-tech_logo.png" style="background:black">
+			</a>
+		</div>
+		<div class="wrapper">
+			<div>
+				<h1>
+                                     欢迎加入思特奇
+            </h1>
+			</div>			
+			<form action="register" method="post" modelAttribute="user" class="col-sm-9">
+			<div class="registry1" >
+					<div>
+						<label>邮箱</label>
+						<input type="text" name="email"  required oninvalid="setCustomValidity('邮箱不能为空')" oninput="setCustomValidity('')" id="you"/>
+					</div>
+
+					<div>
+						<label>密码</label>
+						<input type="password" name="password" id="mi" value="" required oninvalid="setCustomValidity('密码不能为空')"  oninput="setCustomValidity('')"/>
+					</div>
+					
+					<div>
+						<label>确认密码</label>
+						<input type="password" name="password1" id="que" value="" required oninvalid="setCustomValidity('确认密码不能为空哦')"  oninput="setCustomValidity('')"/>
+					</div>
+
+					<div>
+						<label>名号</label>
+						<input type="text" name="name" id="ming" value="" required oninvalid="setCustomValidity('名号不能为空')"  oninput="setCustomValidity('')"/>
+					</div>
+
+					<div>
+						<label id="suggestion">第一印象很重要，起个响亮的名号吧</label>
+					</div>
+				</div>
+				<div class="registry2">
+					<div>
+						<label>手机号</label>
+						<input type="text" name="phone"   required oninvalid="setCustomValidity('请输入正确手机号')" class="shou" />
+					</div>
+
+					<div>
+						<label id="suggestion">用手机接收注册验证码 </label>
+					</div>
+
+					<div>
+						<label id="suggestion">验证的手机号如果没有绑定过帐号，会自动绑定当前帐号 </label>
+					</div>
+
+					<div>
+						<label>验证码</label>
+						<input type="text" name="" id="" value="" class="yan" />
+						<input type="submit" value="获取验证码" class="zheng" />
+					</div>
+					
+				<div>
+					<input type="submit" name="" id="" value="注册" class="zhu"/>
+				</div>
+				</div>
+			</form>
+			<form   class="col-sm-3" style="margin-top:10px">
+			<a class="yi" style="text-decoration: none">>已经拥有思特奇帐号？ </a> <a href="toLogin" class="ru" style="text-decoration: none">直接登陆</a>
+			
+			</form>
+			</div>
+		</div>
+	</body>
+
+</html>
